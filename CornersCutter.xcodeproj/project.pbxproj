@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		765799A0200732E500B29F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657999F200732E500B29F86 /* AppDelegate.swift */; };
+		765799A2200732E500B29F86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799A1200732E500B29F86 /* ViewController.swift */; };
+		765799A5200732E500B29F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765799A3200732E500B29F86 /* Main.storyboard */; };
+		765799A7200732E500B29F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765799A6200732E500B29F86 /* Assets.xcassets */; };
+		765799AA200732E500B29F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765799A8200732E500B29F86 /* LaunchScreen.storyboard */; };
+		765799B5200732E600B29F86 /* CornersCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799B4200732E600B29F86 /* CornersCutterTests.swift */; };
+		765799C0200732E600B29F86 /* CornersCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799BF200732E600B29F86 /* CornersCutterUITests.swift */; };
+		765799CF2007334600B29F86 /* PJCornersCutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799CE2007334600B29F86 /* PJCornersCutter.swift */; };
+		765BF12A200B66D300EB9E59 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF129200B66D300EB9E59 /* TestViewController.swift */; };
+		765BF12C200B67B600EB9E59 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF12B200B67B600EB9E59 /* TestModel.swift */; };
+		765BF12F200B680A00EB9E59 /* TestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */; };
+		765BF130200B680A00EB9E59 /* TestCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */; };
+		85A4DC7EC015E842A07962FA /* Pods_CornersCutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5C730D5A2FF177639168AA /* Pods_CornersCutter.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		765799B1200732E600B29F86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76579994200732E500B29F86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7657999B200732E500B29F86;
+			remoteInfo = CornersCutter;
+		};
+		765799BC200732E600B29F86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76579994200732E500B29F86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7657999B200732E500B29F86;
+			remoteInfo = CornersCutter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C964FC9F48A405A37FA81B6 /* Pods-CornersCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornersCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter.release.xcconfig"; sourceTree = "<group>"; };
+		4F5C730D5A2FF177639168AA /* Pods_CornersCutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CornersCutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7657999C200732E500B29F86 /* CornersCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornersCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7657999F200732E500B29F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		765799A1200732E500B29F86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		765799A4200732E500B29F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		765799A6200732E500B29F86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		765799A9200732E500B29F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		765799AB200732E500B29F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765799B0200732E600B29F86 /* CornersCutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CornersCutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		765799B4200732E600B29F86 /* CornersCutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersCutterTests.swift; sourceTree = "<group>"; };
+		765799B6200732E600B29F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765799BB200732E600B29F86 /* CornersCutterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CornersCutterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		765799BF200732E600B29F86 /* CornersCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersCutterUITests.swift; sourceTree = "<group>"; };
+		765799C1200732E600B29F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765799CE2007334600B29F86 /* PJCornersCutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJCornersCutter.swift; sourceTree = "<group>"; };
+		765BF129200B66D300EB9E59 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		765BF12B200B67B600EB9E59 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellTableViewCell.swift; sourceTree = "<group>"; };
+		765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCellTableViewCell.xib; sourceTree = "<group>"; };
+		EAEEB19722492D9B67982BE6 /* Pods-CornersCutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornersCutter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76579999200732E500B29F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85A4DC7EC015E842A07962FA /* Pods_CornersCutter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799AD200732E600B29F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799B8200732E600B29F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6860EAA1135A7E8F2C9186C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5C730D5A2FF177639168AA /* Pods_CornersCutter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76579993200732E500B29F86 = {
+			isa = PBXGroup;
+			children = (
+				765799CD2007331500B29F86 /* PJCornersCutter */,
+				7657999E200732E500B29F86 /* CornersCutter */,
+				765799B3200732E600B29F86 /* CornersCutterTests */,
+				765799BE200732E600B29F86 /* CornersCutterUITests */,
+				7657999D200732E500B29F86 /* Products */,
+				BEC943A779F07C657D53B612 /* Pods */,
+				6860EAA1135A7E8F2C9186C2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7657999D200732E500B29F86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7657999C200732E500B29F86 /* CornersCutter.app */,
+				765799B0200732E600B29F86 /* CornersCutterTests.xctest */,
+				765799BB200732E600B29F86 /* CornersCutterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7657999E200732E500B29F86 /* CornersCutter */ = {
+			isa = PBXGroup;
+			children = (
+				765BF131200B681500EB9E59 /* Test */,
+				7657999F200732E500B29F86 /* AppDelegate.swift */,
+				765799A1200732E500B29F86 /* ViewController.swift */,
+				765799A3200732E500B29F86 /* Main.storyboard */,
+				765799A6200732E500B29F86 /* Assets.xcassets */,
+				765799A8200732E500B29F86 /* LaunchScreen.storyboard */,
+				765799AB200732E500B29F86 /* Info.plist */,
+			);
+			path = CornersCutter;
+			sourceTree = "<group>";
+		};
+		765799B3200732E600B29F86 /* CornersCutterTests */ = {
+			isa = PBXGroup;
+			children = (
+				765799B4200732E600B29F86 /* CornersCutterTests.swift */,
+				765799B6200732E600B29F86 /* Info.plist */,
+			);
+			path = CornersCutterTests;
+			sourceTree = "<group>";
+		};
+		765799BE200732E600B29F86 /* CornersCutterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				765799BF200732E600B29F86 /* CornersCutterUITests.swift */,
+				765799C1200732E600B29F86 /* Info.plist */,
+			);
+			path = CornersCutterUITests;
+			sourceTree = "<group>";
+		};
+		765799CD2007331500B29F86 /* PJCornersCutter */ = {
+			isa = PBXGroup;
+			children = (
+				765799CE2007334600B29F86 /* PJCornersCutter.swift */,
+			);
+			path = PJCornersCutter;
+			sourceTree = "<group>";
+		};
+		765BF131200B681500EB9E59 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				765BF129200B66D300EB9E59 /* TestViewController.swift */,
+				765BF12B200B67B600EB9E59 /* TestModel.swift */,
+				765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */,
+				765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		BEC943A779F07C657D53B612 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAEEB19722492D9B67982BE6 /* Pods-CornersCutter.debug.xcconfig */,
+				0C964FC9F48A405A37FA81B6 /* Pods-CornersCutter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7657999B200732E500B29F86 /* CornersCutter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 765799C4200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutter" */;
+			buildPhases = (
+				F4ABD8DF306A2618D2FC6551 /* [CP] Check Pods Manifest.lock */,
+				76579998200732E500B29F86 /* Sources */,
+				76579999200732E500B29F86 /* Frameworks */,
+				7657999A200732E500B29F86 /* Resources */,
+				63B92F6BB4D03BB982540691 /* [CP] Embed Pods Frameworks */,
+				599AF2387ABACB3042D48306 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CornersCutter;
+			productName = CornersCutter;
+			productReference = 7657999C200732E500B29F86 /* CornersCutter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		765799AF200732E600B29F86 /* CornersCutterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 765799C7200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutterTests" */;
+			buildPhases = (
+				765799AC200732E600B29F86 /* Sources */,
+				765799AD200732E600B29F86 /* Frameworks */,
+				765799AE200732E600B29F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				765799B2200732E600B29F86 /* PBXTargetDependency */,
+			);
+			name = CornersCutterTests;
+			productName = CornersCutterTests;
+			productReference = 765799B0200732E600B29F86 /* CornersCutterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		765799BA200732E600B29F86 /* CornersCutterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 765799CA200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutterUITests" */;
+			buildPhases = (
+				765799B7200732E600B29F86 /* Sources */,
+				765799B8200732E600B29F86 /* Frameworks */,
+				765799B9200732E600B29F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				765799BD200732E600B29F86 /* PBXTargetDependency */,
+			);
+			name = CornersCutterUITests;
+			productName = CornersCutterUITests;
+			productReference = 765799BB200732E600B29F86 /* CornersCutterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76579994200732E500B29F86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Zoey Weng";
+				TargetAttributes = {
+					7657999B200732E500B29F86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					765799AF200732E600B29F86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7657999B200732E500B29F86;
+					};
+					765799BA200732E600B29F86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7657999B200732E500B29F86;
+					};
+				};
+			};
+			buildConfigurationList = 76579997200732E500B29F86 /* Build configuration list for PBXProject "CornersCutter" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76579993200732E500B29F86;
+			productRefGroup = 7657999D200732E500B29F86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7657999B200732E500B29F86 /* CornersCutter */,
+				765799AF200732E600B29F86 /* CornersCutterTests */,
+				765799BA200732E600B29F86 /* CornersCutterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7657999A200732E500B29F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765799AA200732E500B29F86 /* LaunchScreen.storyboard in Resources */,
+				765BF130200B680A00EB9E59 /* TestCellTableViewCell.xib in Resources */,
+				765799A7200732E500B29F86 /* Assets.xcassets in Resources */,
+				765799A5200732E500B29F86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799AE200732E600B29F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799B9200732E600B29F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		599AF2387ABACB3042D48306 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63B92F6BB4D03BB982540691 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDPerformanceView_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4ABD8DF306A2618D2FC6551 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CornersCutter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76579998200732E500B29F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765799A2200732E500B29F86 /* ViewController.swift in Sources */,
+				765BF12F200B680A00EB9E59 /* TestCellTableViewCell.swift in Sources */,
+				765799A0200732E500B29F86 /* AppDelegate.swift in Sources */,
+				765BF12C200B67B600EB9E59 /* TestModel.swift in Sources */,
+				765BF12A200B66D300EB9E59 /* TestViewController.swift in Sources */,
+				765799CF2007334600B29F86 /* PJCornersCutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799AC200732E600B29F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765799B5200732E600B29F86 /* CornersCutterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765799B7200732E600B29F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765799C0200732E600B29F86 /* CornersCutterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		765799B2200732E600B29F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7657999B200732E500B29F86 /* CornersCutter */;
+			targetProxy = 765799B1200732E600B29F86 /* PBXContainerItemProxy */;
+		};
+		765799BD200732E600B29F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7657999B200732E500B29F86 /* CornersCutter */;
+			targetProxy = 765799BC200732E600B29F86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		765799A3200732E500B29F86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				765799A4200732E500B29F86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		765799A8200732E500B29F86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				765799A9200732E500B29F86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		765799C2200732E600B29F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		765799C3200732E600B29F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		765799C5200732E600B29F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAEEB19722492D9B67982BE6 /* Pods-CornersCutter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		765799C6200732E600B29F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C964FC9F48A405A37FA81B6 /* Pods-CornersCutter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		765799C8200732E600B29F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CornersCutter.app/CornersCutter";
+			};
+			name = Debug;
+		};
+		765799C9200732E600B29F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CornersCutter.app/CornersCutter";
+			};
+			name = Release;
+		};
+		765799CB200732E600B29F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CornersCutter;
+			};
+			name = Debug;
+		};
+		765799CC200732E600B29F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CornersCutterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoey.CornersCutterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CornersCutter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76579997200732E500B29F86 /* Build configuration list for PBXProject "CornersCutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				765799C2200732E600B29F86 /* Debug */,
+				765799C3200732E600B29F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		765799C4200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				765799C5200732E600B29F86 /* Debug */,
+				765799C6200732E600B29F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		765799C7200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				765799C8200732E600B29F86 /* Debug */,
+				765799C9200732E600B29F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		765799CA200732E600B29F86 /* Build configuration list for PBXNativeTarget "CornersCutterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				765799CB200732E600B29F86 /* Debug */,
+				765799CC200732E600B29F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76579994200732E500B29F86 /* Project object */;
+}
