@@ -10,12 +10,19 @@ import UIKit
 
 public extension UIView {
     
+    /** --->设置UIView、UIButton和UILabel圆角，UIImageView的圆角设置请使用***pj_drawCornerImageView()***
+     * @param radius 圆角半径，默认切成圆
+     */
     public func pj_addCorner(radius: CGFloat = 0.0) {
         self.pj_addCorner(radius: radius, direction: .allCorners)
     }
     
+    /** --->设置UIView、UIButton和UILabel圆角，UIImageView的圆角设置请使用***pj_drawCornerImageView()***
+     * @param radius 圆角半径，默认切成圆
+     * @param direction 切割的方向
+     */
     public func pj_addCorner(radius: CGFloat,
-                                    direction: UIRectCorner = .allCorners) {
+                             direction: UIRectCorner = .allCorners) {
         let backgroundColor = self.backgroundColor ?? .clear
         let borderColor = self.layer.borderColor ?? UIColor.clear.cgColor
         if self is UIImageView {
@@ -31,7 +38,7 @@ public extension UIView {
         }
     }
     
-    /** --->这种方式不能设置backgroundColor,用setFillColor的方式替换backgroundColor<---,*支持 autoLayout或是第三方的自动布局库*,切割UIView、UIButton和UILabel圆角
+    /** --->这种方式不能设置backgroundColor,用setFillColor的方式替换backgroundColor<---,*支持 autoLayout或是第三方的自动布局库*,切割UIView、UIButton和UILabel圆角，UIImageView的圆角设置请使用***pj_drawCornerImageView()***
      * @param direction 切割的方向
      * @param radius 圆角半径
      * @param borderWidth 边框宽度
@@ -39,10 +46,10 @@ public extension UIView {
      * @param backgroundColor 背景色
      */
     public func pj_drawRectWithRoundedCorner(radius: CGFloat,
-                                       direction: UIRectCorner = .allCorners,
-                                       borderWidth: CGFloat = 0.0,
-                                       backgroundColor: UIColor = .clear,
-                                       borderColor: CGColor) -> UIImage {
+                                             direction: UIRectCorner = .allCorners,
+                                             borderWidth: CGFloat = 0.0,
+                                             backgroundColor: UIColor = .clear,
+                                             borderColor: CGColor) -> UIImage {
         var sizeToFit: CGSize = .zero
         if self.bounds.size != .zero {
             sizeToFit = self.bounds.size
@@ -125,7 +132,7 @@ public extension UIView {
 public extension UIImageView {
     
     /**
-     * 设置圆形UIImageView
+     * 设置圆形UIImageView，普通非UIImageView视图使用***pj_addCorner()***设置圆角
      */
     public func pj_drawCornerImageView() {
         let backgroundColor = self.backgroundColor ?? .clear
@@ -133,7 +140,7 @@ public extension UIImageView {
         self.pj_drawCornerImageView(radius: self.frame.size.height / 2.0, direction: .allCorners, borderWidth: self.layer.borderWidth, borderColor: borderColor, backgroundColor: backgroundColor)
     }
     
-    /** 切割UIImageView圆角
+    /** 切割UIImageView圆角，普通非UIImageView视图使用***pj_addCorner()***设置圆角
      * @param direction 切割的方向
      * @param radius 圆角半径
      */
@@ -143,7 +150,7 @@ public extension UIImageView {
         self.pj_drawCornerImageView(radius: radius, direction: direction, borderWidth: self.layer.borderWidth, borderColor: borderColor, backgroundColor: backgroundColor)
     }
     
-    /** 切割UIImageView圆角
+    /** 切割UIImageView圆角，普通非UIImageView视图使用***pj_addCorner()***设置圆角
      * @param direction 切割的方向
      * @param radius 圆角半径
      * @param borderWidth 边框宽度
@@ -277,6 +284,7 @@ open class PJCorner: NSObject {
     }
 }
 
+// MARK: 安全添加移除Observer
 extension NSObject {
     private struct AssociatedKeys {
         static var safeObservers = "safeObservers"
@@ -323,4 +331,3 @@ private class ObserverInfo: Equatable {
 private func ==(lhs: ObserverInfo, rhs: ObserverInfo) -> Bool {
     return lhs.observer == rhs.observer && lhs.keypath == rhs.keypath
 }
-
