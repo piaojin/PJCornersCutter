@@ -53,20 +53,38 @@ public extension UIView {
         var sizeToFit: CGSize = .zero
         if self.bounds.size != .zero {
             sizeToFit = self.bounds.size
-        } else if self.constraints.count >= 2 {
-            // support autoLayout
-            let constraints = self.constraints
-            if let firstConstraint = constraints.first, let lastConstraint = constraints.last, firstConstraint.constant > 0.0, lastConstraint.constant > 0.0 {
-                if firstConstraint.description.contains("width") {
-                    sizeToFit = CGSize(width: firstConstraint.constant, height: lastConstraint.constant)
-                } else {
-                    sizeToFit = CGSize(width: lastConstraint.constant, height: firstConstraint.constant)
-                }
-            } else {
-                assertionFailure("widthAnchor or heightAnchor error")
-            }
         } else {
-            assertionFailure("before call pj_drawRectWithRoundedCornerNonBorderColor need to set frame or add autolayout constraints")
+            // support autoLayout
+            
+            var width: CGFloat = 0.0
+            var height: CGFloat = 0.0
+            
+            if let widthConstraint = self.pj_widthConstraint {
+                width = widthConstraint.constant
+            }
+            
+            if let heightConstraint = self.pj_heightConstraint {
+                height = heightConstraint.constant
+            }
+            
+            sizeToFit = CGSize(width: width, height: height)
+        }
+        
+        var radius = radius
+        
+        if radius == 0 {
+            radius = self.bounds.size.height / 2.0
+        }
+        
+        if self.pjCorner == nil {
+            self.pjCorner = PJCorner(radius: radius, direction: direction, view: self)
+        }
+        
+        self.backgroundColor = .clear
+        self.layer.borderColor = UIColor.clear.cgColor
+        
+        if sizeToFit.width == 0.0 || sizeToFit.height == 0.0 {
+            return UIImage()
         }
         
         UIGraphicsBeginImageContextWithOptions(sizeToFit, false, UIScreen.main.scale)
@@ -163,20 +181,21 @@ public extension UIImageView {
         var sizeToFit: CGSize = .zero
         if self.bounds.size != .zero {
             sizeToFit = self.bounds.size
-        } else if self.constraints.count >= 2 {
-            // support autoLayout
-            let constraints = self.constraints
-            if let firstConstraint = constraints.first, let lastConstraint = constraints.last, firstConstraint.constant > 0.0, lastConstraint.constant > 0.0 {
-                if firstConstraint.description.contains("width") {
-                    sizeToFit = CGSize(width: firstConstraint.constant, height: lastConstraint.constant)
-                } else {
-                    sizeToFit = CGSize(width: lastConstraint.constant, height: firstConstraint.constant)
-                }
-            } else {
-                assertionFailure("widthAnchor or heightAnchor error")
-            }
         } else {
-            assertionFailure("before call pj_drawRectWithRoundedCornerNonBorderColor need to set frame or add autolayout constraints")
+            // support autoLayout
+            
+            var width: CGFloat = 0.0
+            var height: CGFloat = 0.0
+            
+            if let widthConstraint = self.pj_widthConstraint {
+                width = widthConstraint.constant
+            }
+            
+            if let heightConstraint = self.pj_heightConstraint {
+                height = heightConstraint.constant
+            }
+            
+            sizeToFit = CGSize(width: width, height: height)
         }
         
         var radius = radius
@@ -194,6 +213,10 @@ public extension UIImageView {
         
         self.backgroundColor = .clear
         self.layer.borderColor = UIColor.clear.cgColor
+        
+        if sizeToFit.width == 0.0 || sizeToFit.height == 0.0 {
+            return
+        }
         
         if image == nil {
             return
@@ -225,7 +248,7 @@ public extension UIImageView {
     }
 }
 
-public extension UIImageView {
+public extension UIView {
     
     struct AssociatedKey {
         static var kPJCornerKey: String = "kPJCornerKey"
@@ -245,42 +268,46 @@ public extension UIImageView {
     }
 }
 
-struct PJCornerObserver: OptionSet {
-    var rawValue:Int
-    init(rawValue: Int) {
-        self.rawValue = rawValue
-    }
-    static let hasAddImageObserver = PJCornerObserver(rawValue: 1 << 0)
-    static let hasAddContentModeObserver = PJCornerObserver(rawValue: 1 << 1)
-}
-
 open class PJCorner: NSObject {
     private let kImageKey = "image"
+    private let kBoundsKey = "bounds"
     var radius: CGFloat = 0.0
     var direction: UIRectCorner = .allCorners
-    weak var imageView: UIImageView?
+    weak var view: UIView?
     var isNeedSendObserver: Bool = true
     
     convenience init(radius: CGFloat = 0.0, direction: UIRectCorner = .allCorners, imageView: UIImageView) {
+        self.init(radius: radius, direction: direction, view: imageView)
+        self.view?.addSafeObserver(observer: self, forKeyPath: kImageKey, options: [.new, .old])
+    }
+    
+    convenience init(radius: CGFloat = 0.0, direction: UIRectCorner = .allCorners, view: UIView) {
         self.init()
         self.radius = radius
         self.direction = direction
-        self.imageView = imageView
-        self.imageView?.addSafeObserver(observer: self, forKeyPath: kImageKey, options: [.new, .old])
+        self.view = view
+        self.view?.addSafeObserver(observer: self, forKeyPath: kBoundsKey, options: [.new, .old])
     }
     
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == kImageKey {
             if isNeedSendObserver {
-                imageView?.pj_drawCornerImageView(radius: radius, direction: direction)
+                if let tempView = view, let imageView =  tempView as? UIImageView {
+                    imageView.pj_drawCornerImageView(radius: radius, direction: direction)
+                }
             } else {
                 self.isNeedSendObserver = true
+            }
+        } else if keyPath == kBoundsKey {
+            if let tempView = view, let imageView =  tempView as? UIImageView {
+                imageView.pj_drawCornerImageView(radius: radius, direction: direction)
             }
         }
     }
     
     deinit {
-        self.imageView?.removeSafeObserver(observer: self, forKeyPath: kImageKey)
+        self.view?.removeSafeObserver(observer: self, forKeyPath: kImageKey)
+        self.view?.removeSafeObserver(observer: self, forKeyPath: kBoundsKey)
     }
 }
 
@@ -330,4 +357,73 @@ private class ObserverInfo: Equatable {
 
 private func ==(lhs: ObserverInfo, rhs: ObserverInfo) -> Bool {
     return lhs.observer == rhs.observer && lhs.keypath == rhs.keypath
+}
+
+// MARK: 获取上下左右NSLayoutConstraint
+public extension UIView {
+    var pj_constraints: [NSLayoutConstraint]? {
+        return self.superview?.constraints
+    }
+    
+    var pj_leftConstraint: NSLayoutConstraint? {
+        return self.pj_getConstraint(firstAttribute: .left, secondAttribute: .leading)
+    }
+    
+    var pj_rightConstraint: NSLayoutConstraint? {
+        return self.pj_getConstraint(firstAttribute: .right, secondAttribute: .trailing)
+    }
+    
+    var pj_topConstraint: NSLayoutConstraint? {
+        return self.pj_getConstraint(firstAttribute: .top, secondAttribute: .top)
+    }
+    
+    var pj_bottomConstraint: NSLayoutConstraint? {
+        return self.pj_getConstraint(firstAttribute: .bottom, secondAttribute: .bottom)
+    }
+    
+    var pj_widthConstraint: NSLayoutConstraint? {
+        return self.constraints.filter({ (constraint) -> Bool in
+            if constraint.firstAttribute == .width {
+                if let object = constraint.firstItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            } else if constraint.secondAttribute == .width {
+                if let object = constraint.secondItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            }
+            return false
+        }).first
+    }
+    
+    var pj_heightConstraint: NSLayoutConstraint? {
+        return self.constraints.filter({ (constraint) -> Bool in
+            if constraint.firstAttribute == .height {
+                if let object = constraint.firstItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            } else if constraint.secondAttribute == .height {
+                if let object = constraint.secondItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            }
+            return false
+        }).first
+    }
+    
+    // .right .trailing
+    func pj_getConstraint(firstAttribute: NSLayoutAttribute, secondAttribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+        return self.pj_constraints?.filter({ (constraint) -> Bool in
+            if constraint.firstAttribute == firstAttribute || constraint.firstAttribute == secondAttribute {
+                if let object = constraint.firstItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            } else if constraint.secondAttribute == firstAttribute || constraint.secondAttribute == secondAttribute {
+                if let object = constraint.secondItem, let objc = object as? NSObject, objc == self {
+                    return true
+                }
+            }
+            return false
+        }).first
+    }
 }

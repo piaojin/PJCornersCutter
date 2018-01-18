@@ -24,8 +24,12 @@ class TestViewController: UIViewController {
     }
 
     func initView() {
-        tableView.frame = self.view.bounds
         self.view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         tableView.register(TestCellTableViewCell.classForCoder(), forCellReuseIdentifier: "TestCellTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
