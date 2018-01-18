@@ -84,6 +84,7 @@ public extension UIView {
         self.layer.borderColor = UIColor.clear.cgColor
         
         if sizeToFit.width == 0.0 || sizeToFit.height == 0.0 {
+            print("⚠️PJCornersCutter warn: ***view size is zero***")
             return UIImage()
         }
         
@@ -141,7 +142,7 @@ public extension UIView {
             UIGraphicsEndImageContext()
             return image
         } else {
-            assertionFailure("get UIGraphicsGetCurrentContext() Failure")
+            print("⚠️PJCornersCutter warn: ***get UIGraphicsGetCurrentContext() Failure***")
             return UIImage()
         }
     }
@@ -215,6 +216,7 @@ public extension UIImageView {
         self.layer.borderColor = UIColor.clear.cgColor
         
         if sizeToFit.width == 0.0 || sizeToFit.height == 0.0 {
+            print("⚠️PJCornersCutter warn: ***view size is zero***")
             return
         }
         
@@ -238,7 +240,7 @@ public extension UIImageView {
             image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         } else {
-            assertionFailure("get UIGraphicsGetCurrentContext() Failure")
+            print("⚠️PJCornersCutter warn: ***get UIGraphicsGetCurrentContext() Failure***")
         }
         
         if let tempImage = image {
