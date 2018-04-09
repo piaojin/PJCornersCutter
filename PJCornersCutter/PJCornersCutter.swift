@@ -140,6 +140,7 @@ public extension UIView {
             context.drawPath(using: .fillStroke)
             let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
             UIGraphicsEndImageContext()
+            self.pjCorner?.isCorneredDone = true
             return image
         } else {
             print("⚠️PJCornersCutter warn: ***get UIGraphicsGetCurrentContext() Failure***")
@@ -246,6 +247,7 @@ public extension UIImageView {
         if let tempImage = image {
             self.pjCorner?.isNeedSendObserver = false
             self.image = tempImage
+            self.pjCorner?.isCorneredDone = true
         }
     }
 }
@@ -277,6 +279,8 @@ open class PJCorner: NSObject {
     var direction: UIRectCorner = .allCorners
     weak var view: UIView?
     var isNeedSendObserver: Bool = true
+    var removeObserverWhenCorneredDone = false
+    var isCorneredDone = false
     
     convenience init(radius: CGFloat = 0.0, direction: UIRectCorner = .allCorners, imageView: UIImageView) {
         self.init(radius: radius, direction: direction, view: imageView)
@@ -304,6 +308,11 @@ open class PJCorner: NSObject {
             if let tempView = view, let imageView =  tempView as? UIImageView {
                 imageView.pj_drawCornerImageView(radius: radius, direction: direction)
             }
+        }
+        
+        if self.isCorneredDone, self.removeObserverWhenCorneredDone {
+            self.view?.removeSafeObserver(observer: self, forKeyPath: kImageKey)
+            self.view?.removeSafeObserver(observer: self, forKeyPath: kBoundsKey)
         }
     }
     
