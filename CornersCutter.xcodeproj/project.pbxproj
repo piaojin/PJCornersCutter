@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		764976BB207B10B800D42A14 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764976BA207B10B800D42A14 /* TestViewController.swift */; };
 		765799A0200732E500B29F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657999F200732E500B29F86 /* AppDelegate.swift */; };
 		765799A2200732E500B29F86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799A1200732E500B29F86 /* ViewController.swift */; };
 		765799A5200732E500B29F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765799A3200732E500B29F86 /* Main.storyboard */; };
@@ -15,7 +16,7 @@
 		765799B5200732E600B29F86 /* CornersCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799B4200732E600B29F86 /* CornersCutterTests.swift */; };
 		765799C0200732E600B29F86 /* CornersCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799BF200732E600B29F86 /* CornersCutterUITests.swift */; };
 		765799CF2007334600B29F86 /* PJCornersCutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765799CE2007334600B29F86 /* PJCornersCutter.swift */; };
-		765BF12A200B66D300EB9E59 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF129200B66D300EB9E59 /* TestViewController.swift */; };
+		765BF12A200B66D300EB9E59 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF129200B66D300EB9E59 /* TestTableViewController.swift */; };
 		765BF12C200B67B600EB9E59 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF12B200B67B600EB9E59 /* TestModel.swift */; };
 		765BF12F200B680A00EB9E59 /* TestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */; };
 		765BF130200B680A00EB9E59 /* TestCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0C964FC9F48A405A37FA81B6 /* Pods-CornersCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornersCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CornersCutter/Pods-CornersCutter.release.xcconfig"; sourceTree = "<group>"; };
 		4F5C730D5A2FF177639168AA /* Pods_CornersCutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CornersCutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		764976BA207B10B800D42A14 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		7657999C200732E500B29F86 /* CornersCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornersCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7657999F200732E500B29F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765799A1200732E500B29F86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		765799BF200732E600B29F86 /* CornersCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersCutterUITests.swift; sourceTree = "<group>"; };
 		765799C1200732E600B29F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		765799CE2007334600B29F86 /* PJCornersCutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJCornersCutter.swift; sourceTree = "<group>"; };
-		765BF129200B66D300EB9E59 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		765BF129200B66D300EB9E59 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		765BF12B200B67B600EB9E59 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellTableViewCell.swift; sourceTree = "<group>"; };
 		765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -163,10 +165,11 @@
 		765BF131200B681500EB9E59 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				765BF129200B66D300EB9E59 /* TestViewController.swift */,
+				765BF129200B66D300EB9E59 /* TestTableViewController.swift */,
 				765BF12B200B67B600EB9E59 /* TestModel.swift */,
 				765BF12D200B680A00EB9E59 /* TestCellTableViewCell.swift */,
 				765BF12E200B680A00EB9E59 /* TestCellTableViewCell.xib */,
+				764976BA207B10B800D42A14 /* TestViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -376,11 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764976BB207B10B800D42A14 /* TestViewController.swift in Sources */,
 				765799A2200732E500B29F86 /* ViewController.swift in Sources */,
 				765BF12F200B680A00EB9E59 /* TestCellTableViewCell.swift in Sources */,
 				765799A0200732E500B29F86 /* AppDelegate.swift in Sources */,
 				765BF12C200B67B600EB9E59 /* TestModel.swift in Sources */,
-				765BF12A200B66D300EB9E59 /* TestViewController.swift in Sources */,
+				765BF12A200B66D300EB9E59 /* TestTableViewController.swift in Sources */,
 				765799CF2007334600B29F86 /* PJCornersCutter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
